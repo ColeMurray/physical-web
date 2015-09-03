@@ -84,13 +84,13 @@ public class MainActivity extends Activity {
   @Override
   protected void onResume() {
     super.onResume();
-	BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-	if(bluetoothAdapter == null) {
+    BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+    if (bluetoothAdapter == null) {
       Toast.makeText(getApplicationContext(),
-	    R.string.error_bluetooth_support, Toast.LENGTH_LONG).show();
+              R.string.error_bluetooth_support, Toast.LENGTH_LONG).show();
       finish();
-	  return;
-	}
+      return;
+    }
     if (checkIfUserHasOptedIn()) {
       ensureBluetoothIsEnabled(bluetoothAdapter);
       showNearbyBeaconsFragment();
